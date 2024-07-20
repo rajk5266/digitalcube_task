@@ -15,6 +15,7 @@ const TabsOptions = ({ visualDataType, setVisualDataType }) => {
           <div className="visual-tabs">
             <div className="button-wrapper">
               <button
+              className={visualDataType === "current" ? "active" : ""}
                 value="current"
                 onClick={(e) => handleChange(e.target.value)}
               >
@@ -24,6 +25,7 @@ const TabsOptions = ({ visualDataType, setVisualDataType }) => {
 
             <div className="button-wrapper">
               <button
+              className={visualDataType === "5_day_forecast" ? "active" : ""}
                 value="5_day_forecast"
                 onClick={(e) => handleChange(e.target.value)}
               >

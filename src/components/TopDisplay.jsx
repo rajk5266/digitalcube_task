@@ -64,7 +64,7 @@ const TopDisplay = ({ city, setCity, data }) => {
               <Col xs={6}>
                 <div className="description">
                   <div>
-                    <img src="" />
+                    <img src='' />
                   </div>
                   <h2>{data?.weather?.[0]?.main}</h2>
                 </div>
