@@ -7,8 +7,8 @@ export default function WeatherCard({icon,title,description}) {
             <img src={icon} alt="icon"/>
         </div>
         <div className="text ">
-            <p className=''>{title}</p>
-            <p className=''>{description}</p>
+            <p className='fs-4 fw-medium'>{title}</p>
+            <p className='fs-5'>{description}</p>
         </div>
     </div>
   )

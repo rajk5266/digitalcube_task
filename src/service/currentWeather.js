@@ -13,7 +13,7 @@ export const fetchWeatherData = async (cityName) => {
 
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     );
     return response.data;
 
@@ -35,7 +35,7 @@ export const fetchForecastData = async (cityName) => {
   const city = label;
   
   try {
-    const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`);
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
     // if (!response.ok) {
     //   throw new Error('Network response was not ok');
     // }

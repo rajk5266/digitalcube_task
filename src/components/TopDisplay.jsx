@@ -9,17 +9,14 @@ import weatherIcons from "../utils/weatherIcons";
 import { formatDateFromTimestamp } from "../utils/dateUtils";
 
 const TopDisplay = ({ city, setCity, data }) => {
- 
-
-const weatherMain = data?.weather?.[0]?.main;
-  const weatherIconUrl = weatherIcons[weatherMain] || "../assets/icons/cloudy.png";
+  const weatherMain = data?.weather?.[0]?.main;
+  const weatherIconUrl =
+    weatherIcons[weatherMain] || "../assets/icons/cloudy.png";
 
   return (
     <div className="top-display-wrapper">
       <div className="top-display">
-        <div className="header">
-          {/* <h2>Weather App</h2> */}
-        </div>
+        <div className="header">{/* <h2>Weather App</h2> */}</div>
         <Container>
           <Row className="top-bar">
             <Col xs={12}>
@@ -33,33 +30,32 @@ const weatherMain = data?.weather?.[0]?.main;
         <div className="top-display-content">
           <Container>
             <Row>
+            <Col xs={12}>
+                <div className="description">
+                  <div>
+                    <img
+                      className="img-fluid"
+                      src={weatherIconUrl}
+                      alt={weatherMain}
+                    />
+                  </div>
+                  {/* <h2>{data?.weather?.[0]?.main}</h2> */}
+                </div>
+              </Col>
               <Col xs={6}>
                 <div className="temp-area">
                   <div className="temp">
-                    <h1>
-                      {data?.main?.temp
-                        ? (data.main.temp - 273.15).toFixed(2)
-                        : ""}
-                    </h1>
+                    <h1>{data?.main?.temp}<sup> °</sup>C</h1>
                   </div>
                   <div className="feels-like">
-                    <p>
-                      Feels Like{" "}
-                      {data?.main?.feels_like
-                        ? (data.main.feels_like - 273.15).toFixed(2)
-                        : ""}
-                    </p>
+                    <p>Feels Like {data?.main?.feels_like}</p>
                   </div>
                 </div>
               </Col>
               <Col xs={6}>
-                <div className="description">
-                  <div>
-                  <img className="img-fluid" src={weatherIconUrl} alt={weatherMain} />
-                  </div>
-                  <h2>{data?.weather?.[0]?.main}</h2>
-                </div>
+              <h2>{data?.weather?.[0]?.main}</h2>
               </Col>
+            
             </Row>
             <Row>
               <Col xs={6}>
@@ -76,8 +72,6 @@ const weatherMain = data?.weather?.[0]?.main;
           </Container>
         </div>
       </div>
-
-     
     </div>
   );
 };
