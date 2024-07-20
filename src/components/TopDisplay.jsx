@@ -5,23 +5,14 @@ import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
 import TabsOptions from "./TabsOptions";
 import { fetchWeatherData } from "../service/currentWeather";
+import weatherIcons from "../utils/weatherIcons";
 import { formatDateFromTimestamp } from "../utils/dateUtils";
 
 const TopDisplay = ({ city, setCity, data }) => {
  
-//   const [data, setData] = useState([]);
-//   //   console.log(city, "from Top display component");
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const data = await fetchWeatherData(city);
-//       setData(data);
-//     };
-
-//     fetchData();
-//   }, [city]);
-
-//   console.log(data);
+const weatherMain = data?.weather?.[0]?.main;
+  const weatherIconUrl = weatherIcons[weatherMain] || "../assets/icons/cloudy.png";
 
   return (
     <div className="top-display-wrapper">
@@ -64,7 +55,7 @@ const TopDisplay = ({ city, setCity, data }) => {
               <Col xs={6}>
                 <div className="description">
                   <div>
-                    <img src='' />
+                  <img src={weatherIconUrl} alt={weatherMain} />
                   </div>
                   <h2>{data?.weather?.[0]?.main}</h2>
                 </div>

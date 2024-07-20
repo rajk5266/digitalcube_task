@@ -8,10 +8,10 @@ import VisibilityIcon from '../assets/icons/visibility.png'
 import { Col, Container, Row } from 'react-bootstrap';
 
 const WeatherData = ({data}) => {
-  console.log(data)
+  // console.log(data)
   return (
     <>
-     {/* <TabsOptions visualDataType={visualDataType} setVisualDataType={setVisualDataType} /> */}
+  
      <Container>
      <Row className='row-gap-4'>
       <Col xs={12} md={6} xl={3}>
