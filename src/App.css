@@ -87,8 +87,29 @@ body{
 
 .main-content .visual-tabs .button-wrapper button{
   border-radius: 20px;
-    padding: 5px 7px;
+    padding: 6px 12px;
     background: white;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
+
+
+
+
+/* WEATHER CARD  */
+
+.weather-card {
+  background-color: #a997e3;
+}
+
+.weather-card .icon{
+  border-radius: 50%;
+  background-color: white;
+  overflow: hidden;
+}
+
+.weather-card .icon img{
+  height: 20px;
+  width: 20px;
+}
+/* WEATHER CARD  */

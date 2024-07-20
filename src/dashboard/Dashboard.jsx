@@ -25,7 +25,7 @@ const Dashboard = () => {
   return (
     <div className="container-fluid">
       <Row>
-        <Col xs={12} md={4} className="sidebar">
+        <Col xs={12} md={4} lg={3} className="sidebar">
           <Container>
             <TopDisplay
               city={city}
@@ -36,7 +36,7 @@ const Dashboard = () => {
             />
           </Container>
         </Col>
-        <Col xs={12} md={8} className="main-content">
+        <Col xs={12} md={8} col={9} className="main-content">
           {/* <Container> */}
           <Weatherforecast
             city={city}
