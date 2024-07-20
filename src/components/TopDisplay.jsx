@@ -7,21 +7,21 @@ import TabsOptions from "./TabsOptions";
 import { fetchWeatherData } from "../service/currentWeather";
 import { formatDateFromTimestamp } from "../utils/dateUtils";
 
-const TopDisplay = ({ city, setCity }) => {
+const TopDisplay = ({ city, setCity, data }) => {
  
-  const [data, setData] = useState([]);
-  //   console.log(city, "from Top display component");
+//   const [data, setData] = useState([]);
+//   //   console.log(city, "from Top display component");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchWeatherData(city);
-      setData(data);
-    };
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const data = await fetchWeatherData(city);
+//       setData(data);
+//     };
 
-    fetchData();
-  }, [city]);
+//     fetchData();
+//   }, [city]);
 
-  console.log(data);
+//   console.log(data);
 
   return (
     <>

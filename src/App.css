@@ -63,3 +63,6 @@
 .top-display .top-display-content{
   padding: 1rem 0;
 }
+ .sidebar, .main-content{
+  padding: 0 !important;
+}
