@@ -1,16 +1,13 @@
 import "./App.css";
-import Select from "react-select";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import Dashboard from "./dashboard/Dashboard";
 
 function App() {
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
 
   return (
     <>
-      <Select options={options} />
+    <Dashboard/>
     </>
   );
 }
