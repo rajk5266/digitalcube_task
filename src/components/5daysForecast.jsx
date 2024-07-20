@@ -7,6 +7,8 @@ const FivedaysForecast = ({ city }) => {
   const [selectedDataType, setSelectedDataType] = useState('temperature');
   const chartRef = useRef(null);
 
+
+  // fetching weather data for 5 days 
   const fetchData = useCallback(async () => {
     try {
       const data = await fetchForecastData(city);
@@ -48,10 +50,16 @@ const FivedaysForecast = ({ city }) => {
           break;
       }
 
+      // getting Y Axis label 
+      const yAxisLabel = getYAxisLabel(selectedDataType);
+
+
+      // Updting chart or creating a new one 
       if (chartRef.current) {
         chartRef.current.data.datasets[0].data = dataPoints;
         chartRef.current.data.datasets[0].label = selectedDataType.charAt(0).toUpperCase() + selectedDataType.slice(1);
         chartRef.current.data.labels = filteredLabels;
+        chartRef.current.options.scales.y.title.text = yAxisLabel;
         chartRef.current.update();
       } else {
         const ctx = document.getElementById('weatherChart');
@@ -80,6 +88,10 @@ const FivedaysForecast = ({ city }) => {
                 beginAtZero: false,
                 grid: {
                   color: '#e0e0e0'
+                },
+                title: {
+                  display: true,
+                  text: yAxisLabel
                 }
               },
               x: {
@@ -124,6 +136,19 @@ const FivedaysForecast = ({ city }) => {
     }
   };
 
+  const getYAxisLabel = (dataType) => {
+    switch (dataType) {
+      case 'temperature':
+        return 'Temperature (°C)';
+      case 'wind':
+        return 'Wind Speed (m/s)';
+      case 'rain':
+        return 'Rainfall (mm)';
+      default:
+        return '';
+    }
+  };
+
   return (
     <>
       <div className="select-wrapper">
@@ -134,7 +159,7 @@ const FivedaysForecast = ({ city }) => {
         </select>
       </div>
       <div>
-        <canvas id="weatherChart" ></canvas>
+        <canvas id="weatherChart"></canvas>
       </div>
     </>
   );
