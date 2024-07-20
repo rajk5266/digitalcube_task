@@ -1,26 +1,20 @@
 import React, { useState } from "react";
-import Row  from "react-bootstrap/Row";
-import  Col from "react-bootstrap/Col";
-
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Container } from "react-bootstrap";
 
 const TabsOptions = () => {
+  const [VisualDataType, setVisualDataType] = useState("current");
+  const [cityName, setCityName] = useState("mumbai");
 
-
-    const [VisualDataType, setVisualDataType] = useState("current");
-    const [cityName, setCityName] = useState("mumbai");
-  
-  
-  
-    const handleChange = (event) => {
-      setVisualDataType(event.target.value);
-    };
-
-
+  const handleChange = (event) => {
+    setVisualDataType(event.target.value);
+  };
 
   return (
-    <div>
+    <Container>
       <Row>
-        <Col xs={12}>
+        <Col>
           <div className="visual-tabs">
             <div className="input-wrapper">
               <input
@@ -46,7 +40,7 @@ const TabsOptions = () => {
           </div>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

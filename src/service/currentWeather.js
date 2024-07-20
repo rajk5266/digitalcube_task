@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const fetchWeatherData = async (cityName) => {
+    console.log(cityName)
     if(!cityName.label){
         return null
     }
