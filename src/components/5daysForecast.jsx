@@ -134,7 +134,7 @@ const FivedaysForecast = ({ city }) => {
         </select>
       </div>
       <div>
-        <canvas id="weatherChart" width={400} height={220}></canvas>
+        <canvas id="weatherChart" ></canvas>
       </div>
     </>
   );

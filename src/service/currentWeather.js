@@ -4,7 +4,6 @@ const API_KEY = 'fb2f8cf08c959069972b380e38041a73';
 
 
 export const fetchWeatherData = async (cityName) => {
-  console.log(cityName)
   if (!cityName.label) {
     return null
   }
