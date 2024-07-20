@@ -3,9 +3,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
 
-const TabsOptions = () => {
-  const [VisualDataType, setVisualDataType] = useState("current");
-  const [cityName, setCityName] = useState("mumbai");
+const TabsOptions = ({visualDataType ,setVisualDataType }) => {
+  
 
   const handleChange = (event) => {
     setVisualDataType(event.target.value);
@@ -20,7 +19,7 @@ const TabsOptions = () => {
               <input
                 type="checkbox"
                 value="current"
-                checked={VisualDataType === "current"}
+                checked={visualDataType === "current"}
                 onChange={handleChange}
                 className="custom-checkbox"
               />
@@ -31,7 +30,7 @@ const TabsOptions = () => {
               <input
                 type="checkbox"
                 value="5_day_forecast"
-                checked={VisualDataType === "5_day_forecast"}
+                checked={visualDataType === "5_day_forecast"}
                 onChange={handleChange}
                 className="custom-checkbox"
               />

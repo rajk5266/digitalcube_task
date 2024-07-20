@@ -8,14 +8,14 @@ import FivedaysForecast from "../components/5daysForecast";
 const defaultCity = { value: "1", label: "Mumbai" };
 const Dashboard = () => {
   const [city, setCity] = useState(defaultCity);
-  const [VisualDataType, setVisualDataType] = useState('current');
+  const [visualDataType, setVisualDataType] = useState('current');
   return (
     <div>
-      <TopDisplay city={city} setCity={setCity} />
+      <TopDisplay city={city} setCity={setCity}  visualDataType={visualDataType} setVisualDataType={setVisualDataType} />
     
      
-      {VisualDataType === 'current' && <WeatherData/> }
-      {VisualDataType === '5_day_forecast' && <FivedaysForecast/> }
+      {visualDataType === 'current' && <WeatherData/> }
+      {visualDataType === '5_day_forecast' && <FivedaysForecast/> }
     </div>
   );
 };
