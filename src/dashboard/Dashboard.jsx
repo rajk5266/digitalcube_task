@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import TopDisplay from "../components/TopDisplay";
 import Weatherforecast from "../components/Weatherforecast";
@@ -38,8 +38,12 @@ const Dashboard = () => {
         </Col>
         <Col xs={12} md={8} className="main-content">
           {/* <Container> */}
-            <Weatherforecast city={city} visualDataType={visualDataType} setVisualDataType={setVisualDataType} data={data}/>
- 
+          <Weatherforecast
+            city={city}
+            visualDataType={visualDataType}
+            setVisualDataType={setVisualDataType}
+            data={data}
+          />
           {/* </Container> */}
         </Col>
       </Row>

@@ -24,10 +24,10 @@ const TopDisplay = ({ city, setCity, data }) => {
 //   console.log(data);
 
   return (
-    <>
+    <div className="top-display-wrapper">
       <div className="top-display">
         <div className="header">
-          <h2>Weather App</h2>
+          {/* <h2>Weather App</h2> */}
         </div>
         <Container>
           <Row className="top-bar">
@@ -87,7 +87,7 @@ const TopDisplay = ({ city, setCity, data }) => {
       </div>
 
      
-    </>
+    </div>
   );
 };
 
