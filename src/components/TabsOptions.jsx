@@ -24,7 +24,7 @@ const TabsOptions = ({ visualDataType, setVisualDataType }) => {
 
             <div className="button-wrapper">
               <button
-                value="5_days_forecast"
+                value="5_day_forecast"
                 onClick={(e) => handleChange(e.target.value)}
               >
                 5 days Forecast
