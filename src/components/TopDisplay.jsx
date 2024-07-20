@@ -7,7 +7,7 @@ import TabsOptions from "./TabsOptions";
 import { fetchWeatherData } from "../service/currentWeather";
 import { formatDateFromTimestamp } from "../utils/dateUtils";
 
-const TopDisplay = ({ city, setCity, visualDataType, setVisualDataType }) => {
+const TopDisplay = ({ city, setCity }) => {
  
   const [data, setData] = useState([]);
   //   console.log(city, "from Top display component");
@@ -86,7 +86,7 @@ const TopDisplay = ({ city, setCity, visualDataType, setVisualDataType }) => {
         </div>
       </div>
 
-      <TabsOptions visualDataType={visualDataType} setVisualDataType={setVisualDataType} />
+     
     </>
   );
 };
