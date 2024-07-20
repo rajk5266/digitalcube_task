@@ -30,22 +30,24 @@ const TopDisplay = ({ city, setCity, data }) => {
         <div className="top-display-content">
           <Container>
             <Row>
-            <Col xs={12}>
+              <Col xs={12}>
                 <div className="description">
-                  <div>
-                    <img
-                      className="img-fluid"
-                      src={weatherIconUrl}
-                      alt={weatherMain}
-                    />
-                  </div>
+                  <img
+                    className="img-fluid"
+                    src={weatherIconUrl}
+                    alt={weatherMain}
+                  />
+
                   {/* <h2>{data?.weather?.[0]?.main}</h2> */}
                 </div>
               </Col>
               <Col xs={6}>
                 <div className="temp-area">
                   <div className="temp">
-                    <h1>{data?.main?.temp}<sup> °</sup>C</h1>
+                    <h1>
+                      {data?.main?.temp}
+                      <sup> °</sup>C
+                    </h1>
                   </div>
                   <div className="feels-like">
                     <p>Feels Like {data?.main?.feels_like}</p>
@@ -53,14 +55,13 @@ const TopDisplay = ({ city, setCity, data }) => {
                 </div>
               </Col>
               <Col xs={6}>
-              <h2>{data?.weather?.[0]?.main}</h2>
+                <h2>{data?.weather?.[0]?.main}</h2>
               </Col>
-            
             </Row>
             <Row>
               <Col xs={6}>
                 <div className="humidity">
-                  <h3>Humidity - {data?.main?.humidity}</h3>
+                  <h6>Humidity - {data?.main?.humidity}</h6>
                 </div>
               </Col>
               <Col xs={6}>

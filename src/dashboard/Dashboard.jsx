@@ -23,31 +23,36 @@ const Dashboard = () => {
 
   // console.log(data);
   return (
-    <div className="container-fluid">
-      <Row>
-        <Col xs={12} md={4} lg={3} className="sidebar">
-          <Container>
-            <TopDisplay
+    <>
+      {/* <Container>
+        <h2 className="text-center p-2 d-none d-sm-block">Weather Forecast</h2>
+      </Container> */}
+      <div className="container-fluid">
+        <Row>
+          <Col xs={12} md={4} lg={3} className="sidebar">
+            <Container>
+              <TopDisplay
+                city={city}
+                setCity={setCity}
+                visualDataType={visualDataType}
+                setVisualDataType={setVisualDataType}
+                data={data}
+              />
+            </Container>
+          </Col>
+          <Col xs={12} md={8} col={9} className="main-content">
+            {/* <Container> */}
+            <Weatherforecast
               city={city}
-              setCity={setCity}
               visualDataType={visualDataType}
               setVisualDataType={setVisualDataType}
               data={data}
             />
-          </Container>
-        </Col>
-        <Col xs={12} md={8} col={9} className="main-content">
-          {/* <Container> */}
-          <Weatherforecast
-            city={city}
-            visualDataType={visualDataType}
-            setVisualDataType={setVisualDataType}
-            data={data}
-          />
-          {/* </Container> */}
-        </Col>
-      </Row>
-    </div>
+            {/* </Container> */}
+          </Col>
+        </Row>
+      </div>
+    </>
   );
 };
 
