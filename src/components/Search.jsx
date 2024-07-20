@@ -4,6 +4,7 @@ import data from "../data/city.list.json";
 import { useState } from "react";
 
 
+// getting city list from files 
 const Search = ({city, setCity}) => {
 
   const cityOptions = data.map(city => ({

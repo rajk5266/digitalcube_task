@@ -11,6 +11,7 @@ export const fetchWeatherData = async (cityName) => {
   const city = label?.toLowerCase();
 
   try {
+    // Cuurent Weather API Call 
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     );
@@ -34,10 +35,9 @@ export const fetchForecastData = async (cityName) => {
   const city = label;
   
   try {
+
+    // 5 Days Weather API call 
     const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
-    // if (!response.ok) {
-    //   throw new Error('Network response was not ok');
-    // }
     const data = await response.data;
     return data;
   } catch (error) {
