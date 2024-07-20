@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import TopDisplay from "../components/TopDisplay";
-import TabsOptions from "../components/TabsOptions";
-import WeatherData from "../components/WeatherData";
 import Weatherforecast from "../components/Weatherforecast";
 import FivedaysForecast from "../components/5daysForecast";
 import { fetchWeatherData } from "../service/currentWeather";
