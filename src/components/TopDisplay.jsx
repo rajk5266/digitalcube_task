@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
 import TabsOptions from "./TabsOptions";
 import { fetchWeatherData } from "../service/currentWeather";
-import weatherIcons from "../utils/weatherIcons";
+import weatherIcons from "../../public/weatherIcons";
 import { formatDateFromTimestamp } from "../utils/dateUtils";
 
 const TopDisplay = ({ city, setCity, data }) => {

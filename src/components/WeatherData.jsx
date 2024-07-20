@@ -1,6 +1,5 @@
 import React from 'react'
 import WeatherCard from './WeatherCard';
-import Icon from '../assets/icons/cloudy.png';
 import WindIcon from '../assets/icons/wind.png';
 import HumidityIcon from '../assets/icons/humidity.png';
 import PressureIcon from '../assets/icons/pressure.png';
