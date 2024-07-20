@@ -1,52 +1,48 @@
 import axios from "axios";
 
+const API_KEY = 'fb2f8cf08c959069972b380e38041a73'; 
+
+
 export const fetchWeatherData = async (cityName) => {
-    console.log(cityName)
-    if(!cityName.label){
-        return null
-    }
-const {label} = cityName;
-const city = label?.toLowerCase();
+  console.log(cityName)
+  if (!cityName.label) {
+    return null
+  }
+  const { label } = cityName;
+  const city = label?.toLowerCase();
 
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fb2f8cf08c959069972b380e38041a73`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
     );
     return response.data;
 
   } catch (error) {
     console.log("Error fetching weather data:", error);
-    // throw error;
+    throw error;
   }
 };
 
 
-const API_KEY = 'fb2f8cf08c959069972b380e38041a73';
-const BASE_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
 
-const fetchForecastData = async (city) => {
-  const url = `${BASE_URL}?q=${city}&appid=${API_KEY}`;
-  try {
-    const response = await axios.get(url);
-    if (response.status !== 200) {
-      throw new Error('Failed to fetch forecast data');
-    }
-    const data = response.data;
-    return parseForecastData(data);
-  } catch (error) {
-    throw new Error(error.message);
+export const fetchForecastData = async (cityName) => {
+  // console.log(cityName)
+  if (!cityName.label) {
+    return null
   }
-};
-
-const parseForecastData = (data) => {
-  const labels = data.list.map(item => item.dt_txt);
-  const temperatures = data.list.map(item => item.main.temp);
+  const { label } = cityName;
+  const city = label;
   
-  return {
-    labels,
-    temperatures,
+  try {
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`);
+    // if (!response.ok) {
+    //   throw new Error('Network response was not ok');
+    // }
+    const data = await response.data;
+    return data;
+  } catch (error) {
+    console.log('Error fetching data:', error);
+    throw error;
   };
-};
-
-export default fetchForecastData;
+}

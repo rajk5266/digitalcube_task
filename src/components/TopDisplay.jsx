@@ -55,7 +55,7 @@ const weatherMain = data?.weather?.[0]?.main;
               <Col xs={6}>
                 <div className="description">
                   <div>
-                  <img src={weatherIconUrl} alt={weatherMain} />
+                  <img className="img-fluid" src={weatherIconUrl} alt={weatherMain} />
                   </div>
                   <h2>{data?.weather?.[0]?.main}</h2>
                 </div>

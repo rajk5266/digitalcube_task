@@ -7,9 +7,8 @@ const Weatherforecast = ({ city, visualDataType, setVisualDataType, data }) => {
   return (
     <>
       <TabsOptions visualDataType={visualDataType}  setVisualDataType={setVisualDataType} />
-
       {visualDataType === "current" && <WeatherData data={data}/>}
-      {visualDataType === "5_day_forecast" && <FivedaysForecast />}
+      {visualDataType === "5_day_forecast" && <FivedaysForecast city={city}/>}
     </>
   );
 };
